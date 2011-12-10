@@ -14,6 +14,7 @@ module Forem
       else
         register_view
         @posts = @topic.posts.page(params[:page]).per(20)
+        @post = @topic.posts.build
       end
     end
 
