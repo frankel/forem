@@ -75,6 +75,7 @@ zh-CN:
         none: 无
       forum:
         last_post: 最后回复
+        none: 无
     topic:
       headings:
         topic: "帖子"
