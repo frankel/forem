@@ -8,7 +8,7 @@ module Forem
       @post = @topic.posts.build
       if params[:quote]
         reply_to = @topic.posts.find(params[:reply_to_id])
-        @post.text = "<blockquote>" + reply_to.text + "</blockquote>\n\n"
+        @post.text = "<blockquote>" + reply_to.text + "</blockquote><br/>\n\n"
       end
     end
 
