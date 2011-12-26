@@ -11,6 +11,7 @@ module Forem
         @topic.pinned  = params[:topic][:pinned]
         @topic.locked  = params[:topic][:locked]
         @topic.hidden  = params[:topic][:hidden]
+        @topic.good    = params[:topic][:good]
 	      @topic.forum_id = params[:topic][:forum_id]
         if @topic.save
           flash[:notice] = t("forem.topic.updated")
@@ -43,6 +44,12 @@ module Forem
       def toggle_pin
         @topic.toggle!(:pinned)
         flash[:notice] = t("forem.topic.pinned.#{@topic.pinned?}")
+        redirect_to forum_topic_path(@topic.forum, @topic)
+      end
+      
+      def toggle_good
+        @topic.toggle!(:good)
+        flash[:notice] = t("forem.topic.good.#{@topic.good?}")
         redirect_to forum_topic_path(@topic.forum, @topic)
       end
 

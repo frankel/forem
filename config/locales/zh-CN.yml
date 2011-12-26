@@ -75,7 +75,6 @@ zh-CN:
         none: 无
       forum:
         last_post: 最后回复
-        none: 无
     topic:
       headings:
         topic: "帖子"
@@ -122,6 +121,9 @@ zh-CN:
         pin:
           'true': 取消置顶该帖子
           'false': 置顶该帖子
+        good:
+          'true': 取消设为精华
+          'false': 设为精华
     post:
       buttons:
         reply: 回复

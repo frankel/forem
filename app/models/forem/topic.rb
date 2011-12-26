@@ -1,6 +1,6 @@
 module Forem
   class Topic < ActiveRecord::Base
-    attr_protected :pinned, :locked
+    attr_protected :pinned, :locked, :good
 
     belongs_to :forum
     has_many   :views

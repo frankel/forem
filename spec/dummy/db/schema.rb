@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(:version => 20111208035940) do
     t.boolean  "locked",     :default => false, :null => false
     t.boolean  "pinned",     :default => false
     t.boolean  "hidden",     :default => false
+    t.boolean  "good",       :default => false
   end
 
   add_index "forem_topics", ["forum_id"], :name => "index_forem_topics_on_forum_id"
