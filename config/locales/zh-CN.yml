@@ -78,8 +78,8 @@ zh-CN:
     topic:
       headings:
         topic: "帖子"
-        latest: "最新"
-        posts: "回复"
+        latest: "最新回复"
+        posts: "回复数"
         views: "查看次数"
       reply: 回复
       quote: 引用
