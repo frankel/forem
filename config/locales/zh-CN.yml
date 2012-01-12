@@ -169,8 +169,8 @@ zh-CN:
 
   # General stuff
   time_ago_in_words: "%{time} 前"
-  ago: " 前"
-  ago_by: " 前 回复者: "
+  ago: "前"
+  ago_by: "前由:"
   by: 由
   started_by: "创建者: "
   are_you_sure: "确定吗？"
