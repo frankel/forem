@@ -12,5 +12,10 @@ module Forem
       @topics = forem_admin? ? @forum.topics : @forum.topics.visible
       @topics = @topics.by_pinned_or_most_recent_post.page(params[:page]).per(20)
     end
+    
+    def good
+      @topics = Forem::Topic.where(:hidden => false, :good => true).order("created_at DESC").page(params[:page]).per(20)
+    end
+    
   end
 end

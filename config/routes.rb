@@ -1,6 +1,8 @@
 Forem::Engine.routes.draw do
   root :to => "forums#index"
 
+  match "good" => "forums#good"
+  
   resources :forums, :only => [:index, :show] do
     resources :topics
   end
