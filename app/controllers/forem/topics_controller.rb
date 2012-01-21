@@ -23,7 +23,7 @@ module Forem
       @topic = @forum.topics.build
       @topic.posts.build
     end
-
+      
     def create
       authorize! :create_topic, @forum
       @topic = @forum.topics.build(params[:topic])
@@ -36,7 +36,22 @@ module Forem
         render :action => "new"
       end
     end
-
+    
+    def edit
+      scope =  @forum.topics.visible
+      @topic = scope.find(params[:id])
+    end
+    
+    def update
+      scope =  @forum.topics.visible
+      @topic = scope.find(params[:id])
+      if @topic.update_attributes(params[:topic])
+        redirect_to [@forum, @topic]
+      else 
+        render :action => "edit"
+      end
+    end
+    
     def destroy
       @topic = @forum.topics.find(params[:id])
       if forem_user == @topic.user || forem_user.forem_admin?
