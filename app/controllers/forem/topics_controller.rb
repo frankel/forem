@@ -45,10 +45,14 @@ module Forem
     def update
       scope =  @forum.topics.visible
       @topic = scope.find(params[:id])
-      if @topic.update_attributes(params[:topic])
+      if forem_admin? || forem_user.id == @topic.user.id
+        if @topic.update_attributes(params[:topic])
+          redirect_to [@forum, @topic]
+        else 
+          render :action => "edit"
+        end
+      else
         redirect_to [@forum, @topic]
-      else 
-        render :action => "edit"
       end
     end
     
